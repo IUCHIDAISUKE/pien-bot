@@ -1,7 +1,8 @@
 import discord
 import random
+import os
 
-
+token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
 
 
@@ -26,4 +27,6 @@ async def on_message(message):
     if "ぴえん" in message.content:
         if client.user != message.author:
             await message.channel.send(pien_type[random.randint(0, 3)])
-client.run("NzU5MzAwMjM3MTQzMTc5Mjc0.X27fcw.Af_-0Hgyoyb4_Ul1MXnpRjLQpAI")
+
+
+client.run(token)
